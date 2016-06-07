@@ -6,9 +6,9 @@
 
 var app = angular.module('confusionApp', []);
 
-app.controller("menuController", function () {
+app.controller("MenuController", ['$scope', function ($scope) {
 
-    var vm = this;
+    var vm = $scope;
     vm.tab = 1;
     vm.dishes = [
         {
@@ -69,4 +69,10 @@ app.controller("menuController", function () {
     vm.isSelected = function (checkTab) {
         return (this.tab === checkTab);
     };
-});
+
+    vm.showDetails = false;
+
+    vm.toggleDetails = function () {
+        vm.showDetails = !vm.showDetails;
+    };
+}]);
