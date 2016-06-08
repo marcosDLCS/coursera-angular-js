@@ -75,4 +75,33 @@ app.controller("MenuController", ['$scope', function ($scope) {
     vm.toggleDetails = function () {
         vm.showDetails = !vm.showDetails;
     };
+}]).controller('ContactController', ['$scope', function ($scope) {
+
+    var vm = $scope;
+
+    vm.feedback = {mychannel: "", firstName: "", lastName: "", agree: false, email: ""};
+    var channels = [{value: "tel", label: "Tel."}, {value: "Email", label: "Email"}];
+    vm.channels = channels;
+    vm.invalidChannelSelection = false;
+}]).controller('FeedbackController', ['$scope', function ($scope) {
+    var vm = $scope;
+
+    vm.sendFeedback = function () {
+        console.log(vm.feedback);
+        if (vm.feedback.agree && (vm.feedback.mychannel == "") && !vm.feedback.mychannel) {
+            vm.invalidChannelSelection = true;
+            console.log('incorrect');
+        }
+        else {
+            vm.invalidChannelSelection = false;
+            vm.feedback = {
+                mychannel: "", firstName: "", lastName: "",
+                agree: false, email: ""
+            };
+            vm.feedback.mychannel = "";
+
+            vm.feedbackForm.$setPristine();
+            console.log(vm.feedback);
+        }
+    };
 }]);

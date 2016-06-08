@@ -18,7 +18,7 @@ var gulp = require('gulp'),
 gulp.task('jshint', function () {
     return gulp.src('app/scripts/**/*.js')
         .pipe(jshint())
-        .pipe(jshint.reporter(stylish));
+        .pipe(jshint.reporter('jshint-stylish', {beep: true}));
 });
 
 // Clean
