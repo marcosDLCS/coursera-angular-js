@@ -55,7 +55,7 @@ app.controller("MenuController", ['$scope', 'menuFactory', function ($scope, men
 
     vm.sendFeedback = function () {
         console.log(vm.feedback);
-        if (vm.feedback.agree && (vm.feedback.mychannel == "") && !vm.feedback.mychannel) {
+        if (vm.feedback.agree && (vm.feedback.mychannel === "") && !vm.feedback.mychannel) {
             vm.invalidChannelSelection = true;
             console.log('incorrect');
         }
@@ -70,11 +70,11 @@ app.controller("MenuController", ['$scope', 'menuFactory', function ($scope, men
             vm.feedbackForm.$setPristine();
             console.log(vm.feedback);
         }
-    }
+    };
 
-}]).controller('DishDetailController', ['$scope', 'menuFactory', function ($scope, menuFactory) {
+}]).controller('DishDetailController', ['$scope', '$routeParams', 'menuFactory', function ($scope, $routeParams, menuFactory) {
 
-    $scope.dish= menuFactory.getDish(3);
+    $scope.dish = menuFactory.getDish(parseInt($routeParams.id, 10));
 
 }]).controller('DishCommentController', ['$scope', function ($scope) {
 
@@ -95,5 +95,5 @@ app.controller("MenuController", ['$scope', 'menuFactory', function ($scope, men
             comment: ""
         };
         vm.commentForm.$setPristine();
-    }
+    };
 }]);
