@@ -25,6 +25,7 @@
     "bootstrap": "latest",
     "font-awesome": "latest",
     "angular": "~1.5.6",
-    "angular-route": "^1.5.7"
+    "angular-route": "^1.5.7",
+    "angular-ui-router": "^0.3.1"
   }
 }
