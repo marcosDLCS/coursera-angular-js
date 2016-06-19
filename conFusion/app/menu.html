@@ -32,24 +32,20 @@
                 {{showDetails ? 'Hide Details':'Show Details'}}
             </button>
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation">
-                    <a ng-click="menuCtrl.select(1)"
-                       ng-class="{active:isSelected(1)}"
+                <li role="presentation" ng-class="{active:isSelected(1)}">
+                    <a ng-click="select(1)"
                        aria-controls="all menu"
-                       role="tab">TheMenu</a></li>
-                <li role="presentation">
+                       role="tab">The Menu</a></li>
+                <li role="presentation" ng-class="{active:isSelected(2)}">
                     <a ng-click="select(2)"
-                       ng-class="{active:isSelected(2)}"
                        aria-controls="appetizers"
                        role="tab">Appetizers</a></li>
-                <li role="presentation">
+                <li role="presentation" ng-class="{active:isSelected(3)}">
                     <a ng-click="select(3)"
-                       ng-class="{active:isSelected(3)}"
                        aria-controls="mains"
                        role="tab">Mains</a></li>
-                <li role="presentation">
+                <li role="presentation" ng-class="{active:isSelected(4)}">
                     <a ng-click="select(4)"
-                       ng-class="{active:isSelected(4)}"
                        aria-controls="desserts"
                        role="tab">Desserts</a></li>
             </ul>
@@ -76,5 +72,7 @@
 </div>
 <script src="../bower_components/angular/angular.min.js"></script>
 <script src="scripts/app.js"></script>
+<script src="scripts/controllers.js"></script>
+<script src="scripts/services.js"></script>
 </body>
 </html>
