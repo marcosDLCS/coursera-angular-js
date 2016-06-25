@@ -26,7 +26,7 @@
                 <ul class="media-list">
                     <li class="media" ng-repeat="dish in dishes | filter:filtText">
                         <div class="media-left media-middle">
-                            <a ui-sref="app.dishdetails({id: dish._id})">
+                            <a ui-sref="app.dishdetails({id: dish.id})">
                                 <img class="media-object img-thumbnail"
                                      ng-src={{dish.image}} alt="Uthappizza">
                             </a>
