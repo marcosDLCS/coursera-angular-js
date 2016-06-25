@@ -10,7 +10,7 @@
             </div>
             <div class="media" ng-if="showDish">
                 <div class="media-left media-middle">
-                    <a ui-sref="app.dishdetails({id: featuredDish._id})">
+                    <a ui-sref="app.dishdetails({id: featuredDish.id})">
                         <img class="media-object img-thumbnail"
                              src="{{featuredDish.image}}" alt="{{featuredDish.name}}">
                     </a>
@@ -20,7 +20,7 @@
                             class="badge">{{featuredDish.price}}</span></h2>
                     <p>{{featuredDish.description}}</p>
                     <p><a class="btn btn-primary btn-xs"
-                          ui-sref="app.dishdetails({id: featuredDish._id})">More &raquo;</a></p>
+                          ui-sref="app.dishdetails({id: featuredDish.id})">More &raquo;</a></p>
                 </div>
             </div>
         </div>
