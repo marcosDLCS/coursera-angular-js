@@ -54,9 +54,9 @@
                 <ul class="list-unstyled">
                     <li>
                         <blockquote>
-                            <p>{{formComment.rating}} Stars!</p>
-                            <p>{{formComment.comment}}</p>
-                            <footer><cite>{{formComment.author}}</cite>
+                            <p>{{mycomment.rating}} Stars!</p>
+                            <p>{{mycomment.comment}}</p>
+                            <footer><cite>{{mycomment.author}}</cite>
                             </footer>
                         </blockquote>
                     </li>
@@ -67,17 +67,17 @@
         <div class="col-xs-12">
             <form class="form-horizontal" name="commentForm" ng-submit="submitComment()" role="form" novalidate>
                 <div class="form-group has-feedback"
-                     ng-class="{ 'has-error has-feedback' : commentForm.author.$invalid && !commentForm.author.$pristine }">
+                     ng-class="{ 'has-error has-feedback' : mycomment.author.$invalid && !mycomment.author.$pristine }">
                     <label for="author" class="col-sm-3 control-label">Your name</label>
                     <div class="col-sm-9">
                         <input type="text" id="author" name="author" class="form-control" placeholder="Name"
-                               ng-model="formComment.author"
+                               ng-model="mycomment.author"
                                required/>
-                    <span ng-show="commentForm.author.$invalid && !commentForm.author.$pristine"
+                    <span ng-show="mycomment.author.$invalid && !mycomment.author.$pristine"
                           class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-                    <span ng-show="(commentForm.author.$invalid ||
-                                        commentForm.author.$error.required) &&
-                                        !commentForm.author.$pristine"
+                    <span ng-show="(mycomment.author.$invalid ||
+                                        mycomment.author.$error.required) &&
+                                        !mycomment.author.$pristine"
                           class="help-block">Please, enter a name</span>
                     </div>
                 </div>
@@ -86,27 +86,27 @@
                     <label class="col-sm-3 control-label">Number of stars</label>
                     <div class="radio col-sm-9">
                         <label>
-                            <input type="radio" ng-model="formComment.rating" value="1"
+                            <input type="radio" ng-model="mycomment.rating" value="1"
                                    aria-label="...">
                             1
                         </label>
                         <label>
-                            <input type="radio" ng-model="formComment.rating" value="2"
+                            <input type="radio" ng-model="mycomment.rating" value="2"
                                    aria-label="...">
                             2
                         </label>
                         <label>
-                            <input type="radio" ng-model="formComment.rating" value="3"
+                            <input type="radio" ng-model="mycomment.rating" value="3"
                                    aria-label="...">
                             3
                         </label>
                         <label>
-                            <input type="radio" ng-model="formComment.rating" value="4"
+                            <input type="radio" ng-model="mycomment.rating" value="4"
                                    aria-label="...">
                             4
                         </label>
                         <label>
-                            <input type="radio" ng-model="formComment.rating" value="5"
+                            <input type="radio" ng-model="mycomment.rating" value="5"
                                    aria-label="...">
                             5
                         </label>
@@ -114,24 +114,24 @@
                 </div>
 
                 <div class="form-group has-feedback"
-                     ng-class="{'has-error has-feedback' : commentForm.comment.$invalid && !commentForm.comment.$pristine }">
+                     ng-class="{'has-error has-feedback' : mycomment.comment.$invalid && !mycomment.comment.$pristine }">
                     <label for="comment" class="col-sm-3 control-label">Your comments</label>
                     <div class="col-sm-9">
                         <textarea id="comment" name="comment" rows="10" placeholder="Comment" class="form-control"
-                                  ng-model="formComment.comment" required/>
+                                  ng-model="mycomment.comment" required/>
                         </textarea>
-                    <span ng-show="commentForm.comment.$invalid && !commentForm.comment.$pristine"
+                    <span ng-show="mycomment.comment.$invalid && !mycomment.comment.$pristine"
                           class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-                    <span ng-show="(commentForm.comment.$invalid ||
-                                        commentForm.comment.$error.required) &&
-                                        !commentForm.comment.$pristine"
+                    <span ng-show="(mycomment.comment.$invalid ||
+                                        mycomment.comment.$error.required) &&
+                                        !mycomment.comment.$pristine"
                           class="help-block">Please, enter a comment</span>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-10">
-                        <button ng-disabled="commentForm.$invalid" type="submit" class="btn btn-primary"><strong>Submit
+                        <button ng-disabled="mycomment.$invalid" type="submit" class="btn btn-primary"><strong>Submit
                             Comment</strong></button>
                     </div>
                 </div>
