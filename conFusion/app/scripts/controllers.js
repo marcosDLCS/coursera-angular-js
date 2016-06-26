@@ -6,7 +6,7 @@ angular.module('confusionApp')
 
         $scope.tab = 1;
         $scope.filtText = '';
-        $scope.showDetails = true;
+        $scope.showDetails = false;
 
         $scope.showMenu = false;
         $scope.message = "Loading ...";
